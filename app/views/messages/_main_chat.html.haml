@@ -1,0 +1,24 @@
+.caht
+  .caht__group
+    .caht__group__left-box
+      %h2.caht__group__left-box__title 11111
+      %ul.caht__group__left-box__member-list Member：
+    = link_to '#' do
+      .caht__group__edit-btn Edit
+  .chat__messages-list
+    .chat__message-list
+      %p.chat__message-list__name 山ーーーー
+      %p.chat__message-list__date 2020/04/17(Fri) 14:19:13
+    .chat__message-text 111111111111111111111
+    .chat__message-list
+      %p.chat__message-list__name 山ーーーー
+      %p.chat__message-list__date 2020/04/17(Fri) 14:19:13
+    .chat__message-text 111111
+  .form
+    %form.new-message
+      .input-box
+        %input.input-box__text{placeholder: "type a message"}
+        %label.input-box__image
+          %i.fa.fa-image
+          %input.input-box__image__file{type: "file"}
+      %input.submit-btn{type:"submit",value:"Send"}
