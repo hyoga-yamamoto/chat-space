@@ -3,7 +3,7 @@
   width: 300px;
   float: left;
   background-color: $side_blue_dark;
-  .side-bar__user-name{
+  &__user-name{
     height: 100px;
     background-color: $side_blue_dark;
     align-items: center;
@@ -15,12 +15,12 @@
       justify-content: space-between;
       width: 100%;
       font-weight: bold;
-      .side-bar__box__menu{
+      &__menu{
         float: right;
         display: flex;
         text-align: right;
         color: $white;
-        .side-bar__box__menu__new-group{
+        &__new-group{
           margin-right:5px;
           .fa-edit {
             color: $white;
