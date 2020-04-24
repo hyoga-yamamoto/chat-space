@@ -5,12 +5,16 @@
         = current_user.name
       %ul.side-bar__box__menu
         %li.side-bar__box__menu__new-group
-          = link_to '#' do
+          = link_to  new_group_path do
             %i.fa.fa-edit
         %li.side-bar__box__menu__edit-user
           = link_to  edit_user_path(current_user) do
             %i.fa.fa-cog
   .side-bar__guoups
-    .side-bar__guoup
-      %p.side-bar__guoup__name 11111
-      %p.side-bar__guoup__message まだまだ
+    - current_user.groups.each do |group|
+      .side-bar__guoup
+        = link_to '#' do
+          .side-bar__guoup__name 
+            = group.name
+          .side-bar__guoup__message 
+            メッセージはまだありません。
