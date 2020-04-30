@@ -7,18 +7,27 @@
       .caht__group__edit-btn Edit
   .chat__messages-list
     .chat__message-list
-      %p.chat__message-list__name 山ーーーー
-      %p.chat__message-list__date 2020/04/17(Fri) 14:19:13
+      .chat__message-list__name 山ーーーー
+        = message.user.name
+      .chat__message-list__date 
+        = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
     .chat__message-text 111111111111111111111
     .chat__message-list
       %p.chat__message-list__name 山ーーーー
       %p.chat__message-list__date 2020/04/17(Fri) 14:19:13
     .chat__message-text 111111
   .form
-    %form.new-message
-      .input-box
-        %input.input-box__text{placeholder: "type a message"}
-        %label.input-box__image
-          %i.fa.fa-image
-          %input.input-box__image__file{type: "file"}
-      %input.submit-btn{type:"submit",value:"Send"}
+    -# %form.new-message
+    -#   .input-box
+    -#     .input-box__text{placeholder: "type a message"}
+    -#     %label.input-box__image
+    -#       %i.fa.fa-image
+    -#       .input-box__image__file{type: "file"}
+    -#   .submit-btn{type:"submit",value:"Send"}
+    = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
